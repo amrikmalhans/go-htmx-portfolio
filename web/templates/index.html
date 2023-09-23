@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      body,
+      * {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-around;
+        align-items: stretch;
+        height: 100vh;
+      }
+
+      .content,
+      .image-container {
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .content {
+        text-align: left;
+        align-self: flex-end;
+        padding: 2rem;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    </style>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
-    <h1>Amrik Malhans - the goat</h1>
+    <div class="container">
+      <div class="content">
+        <h1 style="font-weight: 700; font-size: 3rem; color: #303030">
+          Hey I am
+        </h1>
+        <h2 style="font-weight: bold; font-size: 4rem; color: #ec5151">
+          Amrik Malhans
+        </h2>
+        <p style="font-size: 1.5rem; color: #303030; margin-top: 1rem">
+          I am a Full-stack Developer. I love to make apps for the web using
+          technologies like React, TypeScript, Go and PostgreSQL. I am a student
+          at
+          <a
+            style="
+              color: #ec5151;
+              text-decoration: none;
+              font-size: 1.5rem;
+              font-weight: 500;
+            "
+            href="https://www.tru.ca/"
+            target="_blank"
+            >Thompson Rivers University</a
+          >
+          studying Computer Science. I love programming, philosophy, reading
+          books, and being productive.
+        </p>
+      </div>
+      <div class="image-container">
+        <img loading="lazy" src="../assets/amrik-4.jpg" alt="" />
+      </div>
+    </div>
   </body>
 </html>
