@@ -18,8 +18,14 @@ func main() {
 
 	portfolio.PortfolioRoutes(r)
 
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    "0.0.0.0:" + port, // for railway.app
 		Handler: r,
 	}
 
