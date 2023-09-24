@@ -1,0 +1,41 @@
+.hobby {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 4rem;
+}
+
+.hobby img {
+  width: 300px;
+  border-radius: 15px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.hobby h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+.hobby p {
+  margin: 5px 0 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .hobby {
+    flex-direction: column;
+  }
+
+  .hobby img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

@@ -16,7 +16,6 @@ import (
 func main() {
 	r := chi.NewRouter()
 
-	// Register routes here
 	portfolio.PortfolioRoutes(r)
 
 	srv := &http.Server{
