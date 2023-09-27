@@ -2,6 +2,8 @@
 
 View website at [https://amrik-portfolio.up.railway.app/](https://amrik-portfolio.up.railway.app/)
 
+The code is also hosted on GitHub at [Portfolio](https://github.com/amrikmalhans/go-htmx-portfolio)
+
 This is my personal portfolio website assigment for school. It is quite simple as it uses only HTML and CSS to build these 4 pages:
 
 - index.html (Home)
