@@ -10,7 +10,6 @@ func PortfolioRoutes(r *chi.Mux) {
 	// server static files
 	r.Handle("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("web/static"))))
 
-	
 	r.Route("/", func(r chi.Router) {
 		r.Get("/", getPortfolio)
 	})
@@ -25,6 +24,13 @@ func PortfolioRoutes(r *chi.Mux) {
 
 	r.Route("/schedule", func(r chi.Router) {
 		r.Get("/", getSchedule)
+	})
+
+}
+
+func JournalsRoutes(r *chi.Mux) {
+	r.Route("/journal", func(r chi.Router) {
+		r.Get("/", getJournals)
 	})
 
 }

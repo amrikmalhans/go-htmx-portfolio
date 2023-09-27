@@ -24,3 +24,9 @@ func getSchedule(w http.ResponseWriter, r *http.Request) {
 	temp := template.Must(template.ParseFiles("web/templates/schedule.html"))
 	temp.Execute(w, nil)
 }
+
+
+func getJournals(w http.ResponseWriter, r *http.Request) {
+	temp := template.Must(template.ParseFiles("web/templates/journals.html"))
+	temp.Execute(w, nil)
+}

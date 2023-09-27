@@ -17,6 +17,7 @@ func main() {
 	r := chi.NewRouter()
 
 	portfolio.PortfolioRoutes(r)
+	portfolio.JournalsRoutes(r)
 
 
 	port := os.Getenv("PORT")
