@@ -6,13 +6,11 @@
     <title>Journals</title>
   </head>
   <body>
-    <h1>Journals</h1>
-    <ul>
-      {% for journal in journals %}
-      <li>
-        <a href="/journals/{{ journal.id }}">{{ journal.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
+    {{range .}}
+    <a href="/journals/{{.Slug}}">{{.FrontMatter.Title}}</a>
+    <p>Date: {{.FrontMatter.Date}}</p>
+    <p>Description: {{.FrontMatter.Description}}</p>
+    <hr />
+    {{end}}
   </body>
 </html>

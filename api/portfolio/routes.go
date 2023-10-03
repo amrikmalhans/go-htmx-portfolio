@@ -29,8 +29,11 @@ func PortfolioRoutes(r *chi.Mux) {
 }
 
 func JournalsRoutes(r *chi.Mux) {
-	r.Route("/journal", func(r chi.Router) {
+	r.Route("/journals", func(r chi.Router) {
 		r.Get("/", getJournals)
 	})
 
+	r.Route("/journals/{journal}", func(r chi.Router) {
+		r.Get("/", getJournal)
+	})
 }
