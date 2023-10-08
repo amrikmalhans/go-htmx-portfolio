@@ -33,7 +33,7 @@ func JournalsRoutes(r *chi.Mux) {
 		r.Get("/", getJournals)
 	})
 
-	r.Route("/journals/{journal}", func(r chi.Router) {
+	r.Route("/journals/{journal}", func(r chi.Router) {		
 		r.Get("/", getJournal)
 	})
 }

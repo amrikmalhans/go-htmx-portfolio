@@ -1,6 +1,7 @@
 package portfolio
 
 import (
+	"bytes"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -8,6 +9,10 @@ import (
 	"strings"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/extension"
+	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"gopkg.in/yaml.v3"
 )
 
@@ -79,7 +84,49 @@ func getJournals(w http.ResponseWriter, _ *http.Request) {
 }
 
 func getJournal(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Journal: %s", chi.URLParam(r, "journal"))
+
+	journalSlug := chi.URLParam(r, "journal")
+	filePath := "./journals/" + journalSlug + ".md"
+
+	frontMatterContent, markdownContent, err := readFileWithFrontMatter(filePath)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	frontMatter, err := parseFrontMatter(frontMatterContent)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Convert Markdown to HTML using Goldmark
+	var buf bytes.Buffer
+	md := goldmark.New(
+		goldmark.WithExtensions(extension.GFM), // GitHub-flavored markdown
+		goldmark.WithParserOptions(
+			parser.WithAutoHeadingID(),
+		),
+		goldmark.WithRendererOptions(
+			html.WithUnsafe(), // Enable rendering of raw HTML
+		),
+	)
+
+	if err := md.Convert([]byte(markdownContent), &buf); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	htmlContent := buf.String()
+
+	journal := map[string]interface{}{
+		"Slug":        journalSlug,
+		"FrontMatter": frontMatter,
+		"Content":     template.HTML(htmlContent), 
+	}
+
+	temp := template.Must(template.ParseFiles("web/templates/journal_slug.html"))
+	temp.Execute(w, journal)
 }	
 
 func readFileWithFrontMatter(path string) (string, string, error) {
