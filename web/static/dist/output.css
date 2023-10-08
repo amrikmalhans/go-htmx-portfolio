@@ -568,6 +568,10 @@ video {
   }
 }
 
+.block {
+  display: block;
+}
+
 .table {
   display: table;
 }
@@ -580,4 +584,24 @@ video {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#F6F4D2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 244 210 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#CBDFBD\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 223 189 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#E0E2DB\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 226 219 / var(--tw-bg-opacity));
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }

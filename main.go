@@ -9,16 +9,22 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/amrikmalhans/go-htmx-portfolio.git/api/portfolio"
+	"github.com/amrikmalhans/go-htmx-portfolio.git/api"
+	"github.com/amrikmalhans/go-htmx-portfolio.git/utils"
 	"github.com/go-chi/chi/v5"
 )
 
 func main() {
 	r := chi.NewRouter()
 
-	portfolio.PortfolioRoutes(r)
-	portfolio.JournalsRoutes(r)
+	// init static files
+	r.Handle("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("web/static"))))
 
+	// init templates
+	utils.InitTemplates()
+
+	api.PortfolioRoutes(r)
+	api.JournalsRoutes(r)
 
 	port := os.Getenv("PORT")
 	if port == "" {
