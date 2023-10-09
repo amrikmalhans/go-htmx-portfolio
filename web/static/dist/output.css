@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap");
+
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
@@ -44,7 +46,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Open Sans, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -434,7 +436,7 @@ video {
   display: none;
 }
 
-*, ::before, ::after {
+*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -484,7 +486,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop {
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -534,74 +536,169 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.container {
-  width: 100%;
+.my-12{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+.my-24{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+.my-16{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+.mb-2{
+  margin-bottom: 0.5rem;
 }
 
-.block {
+.mb-4{
+  margin-bottom: 1rem;
+}
+
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
+.block{
   display: block;
 }
 
-.table {
-  display: table;
+.flex{
+  display: flex;
 }
 
-.bg-red-100 {
+.max-w-md{
+  max-width: 28rem;
+}
+
+.max-w-7xl{
+  max-width: 80rem;
+}
+
+.max-w-5xl{
+  max-width: 64rem;
+}
+
+.max-w-6xl{
+  max-width: 72rem;
+}
+
+.flex-1{
+  flex: 1 1 0%;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+
+.flex-grow{
+  flex-grow: 1;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-10{
+  gap: 2.5rem;
+}
+
+.bg-red-50{
   --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+.p-12{
+  padding: 3rem;
 }
 
-.bg-\[\#F6F4D2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 244 210 / var(--tw-bg-opacity));
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.bg-\[\#CBDFBD\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 223 189 / var(--tw-bg-opacity));
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.bg-\[\#E0E2DB\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 226 219 / var(--tw-bg-opacity));
+.py-12{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-.text-2xl {
+.text-center{
+  text-align: center;
+}
+
+.text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1e2d2f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #e0e2db;
 }
