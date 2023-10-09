@@ -58,7 +58,7 @@ func GetJournals(w http.ResponseWriter, _ *http.Request) {
 		journals = append(journals, journal)
 	}
 
-	if err := utils.Temp.ExecuteTemplate(w, "journals.html", journals); err != nil {
+	if err := utils.Temp.ExecuteTemplate(w, "base.html", journals); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
