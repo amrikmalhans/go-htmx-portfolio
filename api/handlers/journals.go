@@ -23,6 +23,12 @@ type FrontMatter struct {
 	Description string `yaml:"description"`
 }
 
+type Journal struct {
+    Slug        string
+    FrontMatter FrontMatter
+    Content     template.HTML
+}
+
 func GetJournals(w http.ResponseWriter, _ *http.Request) {
 
 	files, err := os.ReadDir("./journals")
@@ -101,10 +107,10 @@ func GetJournal(w http.ResponseWriter, r *http.Request) {
 
 	htmlContent := buf.String()
 
-	journal := map[string]interface{}{
-		"Slug":        journalSlug,
-		"FrontMatter": frontMatter,
-		"Content":     template.HTML(htmlContent),
+	journal := &Journal{
+		Slug:        journalSlug,
+		FrontMatter: frontMatter,
+		Content:     template.HTML(htmlContent),
 	}
 
 	if err := utils.Temp.ExecuteTemplate(w, "base.html", journal); err != nil {
